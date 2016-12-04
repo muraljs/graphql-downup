@@ -42,16 +42,4 @@ describe('mapFieldASTs', () => {
     query.aliasName.hello.fields.metadata.fields.email.fields.should.be.empty()
     query.aliasName.hello.fields.metadata.fields.name.fields.should.be.empty()
   })
-
-  xit('validates arguments', () => {
-    (() => getQuery(
-      `{
-        person(age: 0) {
-          name
-        }
-      }`
-    )).should.throw()
-  })
-
-  xit('doesnt choke when missing a description')
 })
