@@ -1,0 +1,37 @@
+{
+  "name": "graphql-downup",
+  "version": "0.0.1",
+  "description": "Use Koa 2 style downstream/upstream middleware to resolve GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha -r should"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muraljs/graphql-downup.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "middleware",
+    "downstream",
+    "upstream",
+    "koa"
+  ],
+  "author": "Craig Spaeth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muraljs/graphql-downup/issues"
+  },
+  "homepage": "https://github.com/muraljs/graphql-downup#readme",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "express-graphql": "^0.6.1",
+    "graphql": "^0.8.2",
+    "should": "^11.1.1",
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "koa-compose": "^3.2.1",
+    "lodash": "^4.17.2"
+  }
+}
