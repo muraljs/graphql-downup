@@ -31,9 +31,7 @@ api.use((ctx, next) => {
 })
 
 api.use((ctx, next) => {
-  console.log('pre')
-  ctx.res.name = 'Bar'
-  return next().then(() => console.log('post'))
+  return next().then(() => { ctx.res.name = 'Bar' })
 })
 
 api.use((ctx, next) => {
