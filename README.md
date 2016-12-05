@@ -20,8 +20,11 @@ api.use(async (ctx, next) => {
   ctx.res.responseTime = ms + 'ms'
 })
 
-app.use('/', graphqlHTTP({ schema: api.schema, graphiql: true }))
-app.listen(3000, () => console.log('listening on 3000'))
+app.use('/', graphqlHTTP({
+  schema: api.schema,
+  graphiql: true
+}))
+app.listen(3000)
 ````
 
 ## Explained

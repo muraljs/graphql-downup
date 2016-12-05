@@ -4,6 +4,7 @@ const { buildMiddlewares, addMiddleware } = require('./lib/middleware')
 
 module.exports = (_schema) => {
   const schema = cloneDeep(_schema)
+
   // Start creating a stack of middleware building up a `req` object that
   // will be used in the `ctx` of our middleware.
   let middlewares = []
