@@ -15,13 +15,15 @@ const api = graphqlDownUp(schema)
 
 api.use(async (ctx, next) => {
   const start = new Date()
-  await next() // `next` runs schema-level resolve functions
+  // schema-level resolve functions are run at the bottom of the middleware stack
+  await next()
   const ms = new Date() - start
+  // `ctx.res` represents the final JSON blob returned from GrapHQL
   ctx.res.responseTime = ms + 'ms'
 })
 
 app.use('/', graphqlHTTP({
-  schema: api.schema,
+  schema: api.schema, // Note to use of a new GraphQL schema object
   graphiql: true
 }))
 app.listen(3000)
