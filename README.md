@@ -14,10 +14,15 @@ const schema = new GraphQLSchema()
 const api = graphqlDownUp(schema)
 
 api.use(async (ctx, next) => {
+  
+  // `ctx.req` represents the parsed GraphQL query
+  if (!ctx.req.responseTime) return next()
   const start = new Date()
+  
   // schema-level resolve functions are run at the bottom of the middleware stack
   await next()
   const ms = new Date() - start
+  
   // `ctx.res` represents the final JSON blob returned from GrapHQL
   ctx.res.responseTime = ms + 'ms'
 })
